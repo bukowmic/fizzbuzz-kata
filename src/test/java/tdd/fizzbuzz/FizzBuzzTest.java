@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FizzBuzzTest {
     private FizzBuzz fizzBuzz;
@@ -39,5 +40,10 @@ public class FizzBuzzTest {
         String representation = fizzBuzz.numberRepresentation(15);
 
         assertThat(representation).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    void number_representation_of_wrong_number_throws_exception() {
+        assertThrows(NumberNotAllowedException.class, () -> fizzBuzz.numberRepresentation(-1));
     }
 }
