@@ -44,7 +44,8 @@ public class FizzBuzzTest {
 
     @Test
     void change_representation_strategy_to_represent_numbers_with_3_as_Fizz() {
-        Function<Integer, String> numberWithThreeStrategy = numberWithThreeStrategyForFizz();
+        Function<Integer, String> numberWithThreeStrategy = FizzBuzzCommonStrategies
+                .containingOrDividedByNumberStrategy(3, "Fizz");
         FizzBuzz fizzBuzz = new FizzBuzz(numberWithThreeStrategy);
         String representation = fizzBuzz.numberRepresentation(31);
 
@@ -53,7 +54,8 @@ public class FizzBuzzTest {
 
     @Test
     void change_representation_strategy_to_represent_numbers_with_3_and_divided_by_5_as_FizzBuzz() {
-        Function<Integer, String> numberWithThreeStrategy = numberWithThreeStrategyForFizz();
+        Function<Integer, String> numberWithThreeStrategy = FizzBuzzCommonStrategies
+                .containingOrDividedByNumberStrategy(3, "Fizz");
         FizzBuzz fizzBuzz = new FizzBuzz(numberWithThreeStrategy, FizzBuzzCommonStrategies.standardBuzzStrategy());
         String representation = fizzBuzz.numberRepresentation(35);
 

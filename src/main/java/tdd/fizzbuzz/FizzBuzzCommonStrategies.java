@@ -21,4 +21,8 @@ public class FizzBuzzCommonStrategies {
     public static Function<Integer, String> commonDividingStrategy(int divider, String whatToSay) {
         return number -> number % divider == 0 ? whatToSay : "";
     }
+
+    public static Function<Integer, String> containingOrDividedByNumberStrategy(int divider, String whatToSay) {
+        return number -> number % divider == 0 || String.valueOf(divider).contains("3") ? whatToSay : "";
+    }
 }
